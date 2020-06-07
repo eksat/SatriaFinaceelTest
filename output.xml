@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200607 15:36:08.121" generator="Robot 3.1.1 (Python 2.7.15 on darwin)">
+<suite source="/Users/satria/FinaceelTest/SatriaFinaceelTest/Assignment2/Assignment2_Test.robot" id="s1" name="Assignment2 Test">
+<test id="s1-t1" name="Ensure on Google Maps Welcome Page">
+<kw name="Open Google Maps Application" library="Logic">
+<kw name="Spawn Appium Server" library="Logic">
+<kw name="Run Process" library="Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>kill $(lsof -t -i:${PORT})</arg>
+<arg>shell=true</arg>
+</arguments>
+<msg timestamp="20200607 15:36:08.733" level="INFO">Starting process:
+kill $(lsof -t -i:4729)</msg>
+<msg timestamp="20200607 15:36:08.742" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20200607 15:36:08.811" level="INFO">Process completed.</msg>
+<status status="PASS" endtime="20200607 15:36:08.811" starttime="20200607 15:36:08.732"></status>
+</kw>
+<kw name="Start Process" library="Process">
+<doc>Starts a new process on background.</doc>
+<arguments>
+<arg>appium</arg>
+<arg>-p</arg>
+<arg>${PORT}</arg>
+<arg>-bp</arg>
+<arg>${BOOTSTRAP_PORT}</arg>
+<arg>alias=appium</arg>
+</arguments>
+<msg timestamp="20200607 15:36:08.812" level="INFO">Starting process:
+appium -p 4729 -bp 50009</msg>
+<status status="PASS" endtime="20200607 15:36:08.821" starttime="20200607 15:36:08.811"></status>
+</kw>
+<kw name="Run Process" library="Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>adb -s ${UDID} shell pm clear ${APP_PACKAGE}</arg>
+<arg>shell=True</arg>
+</arguments>
+<msg timestamp="20200607 15:36:08.822" level="INFO">Starting process:
+adb -s emulator-5554 shell pm clear com.google.android.apps.maps</msg>
+<msg timestamp="20200607 15:36:08.829" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20200607 15:36:09.275" level="INFO">Process completed.</msg>
+<status status="PASS" endtime="20200607 15:36:09.276" starttime="20200607 15:36:08.822"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200607 15:36:14.280" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20200607 15:36:14.280" starttime="20200607 15:36:09.277"></status>
+</kw>
+<kw name="Open Device Application" library="Logic">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check http://appium.io/slate/en/master/?python#appium-server-capabilities
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>udid=${UDID}</arg>
+<arg>newCommandTimeout=3000</arg>
+<arg>fullReset=false</arg>
+<arg>alias=appium</arg>
+<arg>noReset=true</arg>
+<arg>automationName=UiAutomator1</arg>
+</arguments>
+<status status="PASS" endtime="20200607 15:36:17.399" starttime="20200607 15:36:14.282"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:17.399" starttime="20200607 15:36:14.281"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:17.399" starttime="20200607 15:36:08.732"></status>
+</kw>
+<kw name="Open Device Application" library="Logic">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check http://appium.io/slate/en/master/?python#appium-server-capabilities
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>udid=${UDID}</arg>
+<arg>newCommandTimeout=3000</arg>
+<arg>fullReset=false</arg>
+<arg>alias=appium</arg>
+<arg>noReset=true</arg>
+<arg>automationName=UiAutomator1</arg>
+</arguments>
+<status status="PASS" endtime="20200607 15:36:21.538" starttime="20200607 15:36:17.400"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:21.538" starttime="20200607 15:36:17.400"></status>
+</kw>
+<kw name="Click Accept &amp; Continue on TnC Google Maps" library="Keyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.FrameLayout[@resource-id='com.google.android.apps.gmm:id/accept_button']</arg>
+</arguments>
+<msg timestamp="20200607 15:36:21.540" level="INFO">Clicking element 'xpath=//android.widget.FrameLayout[@resource-id='com.google.android.apps.gmm:id/accept_button']'.</msg>
+<status status="PASS" endtime="20200607 15:36:22.379" starttime="20200607 15:36:21.539"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:22.379" starttime="20200607 15:36:21.539"></status>
+</kw>
+<kw name="Tap Skip button on Login Google Maps Screen" library="Keyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@text='Skip']</arg>
+</arguments>
+<msg timestamp="20200607 15:36:22.380" level="INFO">Clicking element 'xpath=//android.widget.Button[@text='Skip']'.</msg>
+<status status="PASS" endtime="20200607 15:36:23.469" starttime="20200607 15:36:22.380"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:23.469" starttime="20200607 15:36:22.379"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:23.469" starttime="20200607 15:36:08.732"></status>
+</kw>
+<kw name="Ensure On Google Maps Main Screen" library="Logic">
+<kw name="Verify Point To Your Location Button" library="Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.FrameLayout[@resource-id='com.google.android.apps.gmm:id/mylocation_button']</arg>
+</arguments>
+<status status="PASS" endtime="20200607 15:36:25.170" starttime="20200607 15:36:23.470"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:25.170" starttime="20200607 15:36:23.469"></status>
+</kw>
+<kw name="Verify Directions Button" library="Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.FrameLayout[@resource-id='com.google.android.apps.gmm:id/on_map_directions_button']</arg>
+</arguments>
+<status status="PASS" endtime="20200607 15:36:25.217" starttime="20200607 15:36:25.171"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:25.217" starttime="20200607 15:36:25.170"></status>
+</kw>
+<kw name="Verify Map Frame" library="Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.FrameLayout[@resource-id='com.google.android.apps.gmm:id/map_frame']</arg>
+</arguments>
+<status status="PASS" endtime="20200607 15:36:25.258" starttime="20200607 15:36:25.218"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:25.258" starttime="20200607 15:36:25.217"></status>
+</kw>
+<kw name="Verify Search Box Container" library="Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.EditText[@resource-id='com.google.android.apps.gmm:id/search_omnibox_text_box']</arg>
+</arguments>
+<status status="PASS" endtime="20200607 15:36:25.310" starttime="20200607 15:36:25.258"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:25.310" starttime="20200607 15:36:25.258"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:25.310" starttime="20200607 15:36:23.469"></status>
+</kw>
+<kw name="Search Location" library="Logic">
+<arguments>
+<arg>Jakarta</arg>
+</arguments>
+<kw name="Tap Search Box" library="Keyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.EditText[@resource-id='com.google.android.apps.gmm:id/search_omnibox_text_box']</arg>
+</arguments>
+<msg timestamp="20200607 15:36:25.312" level="INFO">Clicking element 'xpath=//android.widget.EditText[@resource-id='com.google.android.apps.gmm:id/search_omnibox_text_box']'.</msg>
+<status status="PASS" endtime="20200607 15:36:25.542" starttime="20200607 15:36:25.312"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:25.543" starttime="20200607 15:36:25.311"></status>
+</kw>
+<kw name="Input Keyword on Search Box" library="Keyword">
+<arguments>
+<arg>${KEYWORD}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.EditText[@resource-id='com.google.android.apps.gmm:id/search_omnibox_text_box']</arg>
+<arg>${KEYWORD}</arg>
+</arguments>
+<msg timestamp="20200607 15:36:25.543" level="INFO">Typing text 'Jakarta' into text field 'xpath=//android.widget.EditText[@resource-id='com.google.android.apps.gmm:id/search_omnibox_text_box']'</msg>
+<status status="PASS" endtime="20200607 15:36:31.812" starttime="20200607 15:36:25.543"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:31.812" starttime="20200607 15:36:25.543"></status>
+</kw>
+<kw name="Tap Search Button From Keyboard" library="Keyword">
+<kw name="Run Process" library="Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>adb -s ${UDID} shell input tap 1380 2248</arg>
+<arg>shell=true</arg>
+</arguments>
+<msg timestamp="20200607 15:36:31.813" level="INFO">Starting process:
+adb -s emulator-5554 shell input tap 1380 2248</msg>
+<msg timestamp="20200607 15:36:31.822" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20200607 15:36:32.218" level="INFO">Process completed.</msg>
+<status status="PASS" endtime="20200607 15:36:32.218" starttime="20200607 15:36:31.813"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:32.218" starttime="20200607 15:36:31.813"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:32.219" starttime="20200607 15:36:25.311"></status>
+</kw>
+<kw name="Debug" library="DebugLibrary">
+<doc>Open a interactive shell, run any RobotFramework keywords.</doc>
+<kw name="Handle Tutorial Layout Screen" library="Keyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Verify Tutorial Layout</arg>
+</arguments>
+<assign>
+<var>${is_layout_available}</var>
+</assign>
+<kw name="Verify Tutorial Layout" library="Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.LinearLayout[@resource-id='com.google.android.apps.gmm:id/tutorial_pull_up_layout']</arg>
+</arguments>
+<status status="PASS" endtime="20200607 15:36:38.983" starttime="20200607 15:36:38.919"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:38.984" starttime="20200607 15:36:38.919"></status>
+</kw>
+<msg timestamp="20200607 15:36:38.984" level="INFO">${is_layout_available} = True</msg>
+<status status="PASS" endtime="20200607 15:36:38.984" starttime="20200607 15:36:38.918"></status>
+</kw>
+<kw>
+<arguments>
+<arg>Run Keyword If</arg>
+<arg>'${status}'=='True'</arg>
+<arg>Click Got It Button on Tutorial Layout</arg>
+</arguments>
+<msg timestamp="20200607 15:36:38.984" level="FAIL">Keyword name cannot be empty.</msg>
+<status status="FAIL" endtime="20200607 15:36:38.984" starttime="20200607 15:36:38.984"></status>
+</kw>
+<status status="FAIL" endtime="20200607 15:36:38.984" starttime="20200607 15:36:38.917"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Verify Tutorial Layout</arg>
+</arguments>
+<kw name="Verify Tutorial Layout" library="Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.LinearLayout[@resource-id='com.google.android.apps.gmm:id/tutorial_pull_up_layout']</arg>
+</arguments>
+<status status="PASS" endtime="20200607 15:36:48.900" starttime="20200607 15:36:48.864"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:48.900" starttime="20200607 15:36:48.864"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:36:48.900" starttime="20200607 15:36:48.864"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${is_layout_available}'=='True'</arg>
+<arg>Click Got It Button on Tutorial Layout</arg>
+</arguments>
+<kw name="Click Got It Button on Tutorial Layout" library="Keyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//android.widget.Button[@resource-id='com.google.android.apps.gmm:id/tutorial_pull_up_got_it']</arg>
+</arguments>
+<msg timestamp="20200607 15:36:57.540" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id='com.google.android.apps.gmm:id/tutorial_pull_up_got_it']'.</msg>
+<status status="PASS" endtime="20200607 15:37:00.708" starttime="20200607 15:36:57.540"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:37:00.708" starttime="20200607 15:36:57.540"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:37:00.708" starttime="20200607 15:36:57.539"></status>
+</kw>
+<status status="PASS" endtime="20200607 15:37:22.130" starttime="20200607 15:36:32.220"></status>
+</kw>
+<kw name="Handle Tutorial Layout Screen" library="Keyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Verify Tutorial Layout</arg>
+</arguments>
+<assign>
+<var>${is_layout_available}</var>
+</assign>
+<kw name="Verify Tutorial Layout" library="Keyword">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//android.widget.LinearLayout[@resource-id='com.google.android.apps.gmm:id/tutorial_pull_up_layout']</arg>
+</arguments>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<status status="FAIL" endtime="20200607 15:37:23.638" starttime="20200607 15:37:23.638"></status>
+</kw>
+<msg timestamp="20200607 15:37:23.638" level="WARN">Keyword 'Log Source' could not be run on failure: Execution terminated by signal</msg>
+<status status="FAIL" endtime="20200607 15:37:23.638" starttime="20200607 15:37:22.131"></status>
+</kw>
+<status status="FAIL" endtime="20200607 15:37:23.639" starttime="20200607 15:37:22.131"></status>
+</kw>
+<status status="FAIL" endtime="20200607 15:37:23.639" starttime="20200607 15:37:22.130"></status>
+</kw>
+<status status="FAIL" endtime="20200607 15:37:23.639" starttime="20200607 15:37:22.130"></status>
+</kw>
+<status status="FAIL" endtime="20200607 15:37:23.639" critical="yes" starttime="20200607 15:36:08.731">Execution terminated by signal</status>
+</test>
+<status status="FAIL" endtime="20200607 15:37:23.640" starttime="20200607 15:36:08.124"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Assignment2 Test" pass="0">Assignment2 Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200607 15:37:23.638" level="WARN">Keyword 'Log Source' could not be run on failure: Execution terminated by signal</msg>
+</errors>
+</robot>
