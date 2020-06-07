@@ -34,5 +34,17 @@ Click Got It Button on Tutorial Layout
   Click Element                      xpath=//android.widget.Button[@resource-id='com.google.android.apps.gmm:id/tutorial_pull_up_got_it']
 
 Handle Tutorial Layout Screen
-  ${is_layout_available}             Run Keyword And Return Status                  Verify Tutorial Layout
-  \    Run Keyword If               '${is_layout_available}'=='True'                Click Got It Button on Tutorial Layout
+  ${is_layout_available}=             Run Keyword And Return Status                  Verify Tutorial Layout
+  Run Keyword If                     '${is_layout_available}'=='True'                Click Got It Button on Tutorial Layout
+
+Zoom On Maps
+  Sleep    0.25
+  ${first_x}                       Evaluate            ${HEIGHT} / 2
+  ${first_y}                       Evaluate            ${WIDTH} / 2
+  ${x_up}                          Evaluate            ${HEIGHT} * 0,25
+  ${y_up}                          Evaluate            ${WIDTH} * 0,25
+  ${second_x}                      Evaluate            ${HEIGHT} / 2
+  ${second_y}                      Evaluate            ${WIDTH} / 2
+  ${x_down}                        Evaluate            ${HEIGHT} * 0,25
+  ${y_down}                        Evaluate            ${WIDTH} * 0,25
+  Move Element By Coordinate       ${first_x}   ${first_y}  ${x_up}   ${y_up}  ${second_x}   ${second_y}  ${x_down}   ${y_down}

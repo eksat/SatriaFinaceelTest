@@ -8,13 +8,13 @@ Requirement
 
 Running Test:
 - Assignment1,
-  1. Go to your directory folder O
+  1. Go to your directory folder
   2. Open folder Assignment1/resource.robot
   3. Fill your username, password, and repository name on this field ${USERNAME} , ${PASSWORD} , ${REPO_NAME}
   4. Running this command robot Assignment1/Assignment1_Test.robot
 
-- Assignment1,
-  1. Go to your directory folder O
+- Assignment2,
+  1. Go to your directory folder
   2. Open folder Assignment2/resource.robot
-  3. Change ${UDID} to your connected emulator UDID, here im using emulator from android virtual device
+  3. Change ${UDID} to your connected emulator UDID, here im using emulator from android virtual device, Theres some different element on gmaps apps, since im using android 6 so theres some locator with app package `com.google.android.apps.gmm` instead of `com.google.android.apps.maps`
   4. Running this command robot Assignment2/Assignment2_Test.robot
