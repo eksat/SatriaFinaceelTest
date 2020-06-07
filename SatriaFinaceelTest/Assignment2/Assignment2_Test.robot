@@ -1,4 +1,5 @@
 *** Settings ***
+Library           Zoom.py
 Resource          Resource.robot
 Resource          Keyword.robot
 Resource          Logic.robot

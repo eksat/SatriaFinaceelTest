@@ -4,7 +4,7 @@ Library         Collections
 Library         String
 Library         Process
 Library         DebugLibrary
-Library         REST
+Library         OperatingSystem
 
 
 *** Variable ***
