@@ -1,0 +1,9 @@
+.vscode
+.DS_Store
+.env
+appium-log.*
+webkit-log.*
+*.html
+*.xml
+*.png
+*.pyc
