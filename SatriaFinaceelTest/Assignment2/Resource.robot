@@ -6,6 +6,10 @@ Library         Process
 Library         DebugLibrary
 Library         OperatingSystem
 
+Resource        Logic.robot
+Resource        Keyword.robot
+Library         Zoom.py
+
 
 *** Variable ***
 ${PLATFORM_NAME}          Android

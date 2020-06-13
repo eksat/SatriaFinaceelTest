@@ -1,13 +1,10 @@
 *** Settings ***
-Library           Zoom.py
 Resource          Resource.robot
-Resource          Keyword.robot
-Resource          Logic.robot
 
 *** Test Case ***
-
-Ensure on Google Maps Welcome Page
+Search and Zoom On Pinned Location
   Open Google Maps Application
   Ensure On Google Maps Main Screen
   Search Location                            Jakarta
   Handle Tutorial Layout Screen
+  Zoom On Maps

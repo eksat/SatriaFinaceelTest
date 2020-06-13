@@ -25,6 +25,7 @@ Input Keyword on Search Box
   Input Text                          xpath=//android.widget.EditText[@resource-id='com.google.android.apps.gmm:id/search_omnibox_text_box']          ${KEYWORD}
 
 Tap Search Button From Keyboard
+  Sleep                               5
   Run Process                         adb -s ${UDID} shell input tap 1380 2248    shell=true
 
 Verify Tutorial Layout
@@ -38,13 +39,12 @@ Handle Tutorial Layout Screen
   Run Keyword If                     '${is_layout_available}'=='True'                Click Got It Button on Tutorial Layout
 
 Zoom On Maps
-  Sleep    0.25
-  ${first_x}                       Evaluate            ${HEIGHT} / 2
-  ${first_y}                       Evaluate            ${WIDTH} / 2
-  ${x_up}                          Evaluate            ${HEIGHT} * 0,25
-  ${y_up}                          Evaluate            ${WIDTH} * 0,25
-  ${second_x}                      Evaluate            ${HEIGHT} / 2
-  ${second_y}                      Evaluate            ${WIDTH} / 2
-  ${x_down}                        Evaluate            ${HEIGHT} * 0,25
-  ${y_down}                        Evaluate            ${WIDTH} * 0,25
-  Move Element By Coordinate       ${first_x}   ${first_y}  ${x_up}   ${y_up}  ${second_x}   ${second_y}  ${x_down}   ${y_down}
+  ${first_x}                          Evaluate            805
+  ${first_y}                          Evaluate            1074
+  ${x_up}                             Evaluate            1151
+  ${y_up}                             Evaluate            826
+  ${second_x}                         Evaluate            609
+  ${second_y}                         Evaluate            1254
+  ${x_down}                           Evaluate            253
+  ${y_down}                           Evaluate            1507
+  zoom_out_by_coordinates             ${first_x}          ${first_y}    ${x_up}   ${y_up}  ${second_x}   ${second_y}  ${x_down}   ${y_down}

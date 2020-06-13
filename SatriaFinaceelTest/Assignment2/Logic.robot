@@ -1,6 +1,3 @@
-*** Settings ***
-Library   AppiumLibrary
-
 *** Keywords ***
 Spawn Appium Server
   Run Process   kill $(lsof -t -i:${PORT})    shell=true
